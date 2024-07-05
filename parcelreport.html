@@ -1,0 +1,82 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-security-policy|content-type|default-style|refresh">
+    <title>Parcel Page</title>
+    <link rel="stylesheet" href="/styles/parcelreport.css" />
+    <link rel="stylesheet" href="/styles/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3a46f2a3e7.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <p>Parcels App</p>
+      <p>Admin</p>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="/view/home.html" id="firstsidenav">หน้าหลัก</a>
+      <button type="button" class="dropdown-btn">องค์กร</button>
+      <div class="dropdown-container">
+        <a href="/view/organization.html">&nbsp; หน่วยงาน</a>
+        <a href="/view/department.html">&nbsp; ฝ่าย</a>
+        <a href="/view/equipmenttype.html">&nbsp; พัสดุ-ประเภทครุภัณฑ์</a>
+        <a href="/view/materialtype.html">&nbsp; พัสดุ-ประเภทวัสดุ</a>
+      </div>
+      <a href="/view/parcel.html">การบันทึกพัสดุ</a>
+      <a href="/view/parcelreport.html" class="active">พิมพ์รายงานพัสดุ</a>
+      <a href="#" id="logout" class="lastsidenav">ออกจากระบบ</a>
+    </div>
+
+    <div class="main">
+      <h3>รายงานทะเบียนพัสดูและครุภัณฑ์</h3>
+
+      <div>
+        <label>โปรดเลือกประเภทของพัสดุหรือครุภัณฑ์</label>
+        <select name="parceltype" id="selectparceltype">
+          <option value="carbinet">ตู้ลอย</option>
+          <option value="chari">เก้าอี่</option>
+          <option value="desk">โต๊ะ</option>
+        </select>
+      </div>
+
+      <div>
+        <label>โปรดเลือกชื่อพัสดุหรือครุภัณฑ์</label>
+        <select name="parcelname" id="selectparcelname">
+          <option value="officeparcel">ครุภัณฑ์สำนักงาน</option>
+          <option value="otherparcel">ครุภัณฑ์อื่นๆ</option>
+        </select>
+      </div>
+
+      <button type="button" id="parcelreport">Parcel Report!</button>
+    </div>
+
+    <span id="versionnumber">parcels app v.3.17102566</span>
+
+    <script src="../node_modules/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../node_modules/pdfmake/build/vfs_fonts.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.8/dayjs.min.js"
+      integrity="sha512-af90l7+r/ujCury3kqomcoZ4aNuC4JP0xUUU682bqlRCLLvGJrc9L82zONFccLWmxcMXSqO9d6C7Rr39EkbT3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      dayjs().toDate()
+    </script>
+    <script src="/scripts/parcelreport.js"></script>
+    <script src="/scripts/home.js"></script>
+  </body>
+</html>
